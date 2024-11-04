@@ -4,6 +4,7 @@ import argostranslate.translate
 from flask import Flask, jsonify, request
 from flask_compress import Compress
 from flask_caching import Cache
+from flask_cors import CORS
 from dotenv import load_dotenv
 load_dotenv()
 import warnings
@@ -11,6 +12,7 @@ warnings.filterwarnings("ignore", category=FutureWarning, module="stanza.models.
 api_key = os.getenv("API_KEY")
 
 app = Flask(__name__)
+CORS(app)
 cache = Cache(app=app, config={"CACHE_TYPE": "simple"})
 Compress(app)
 convertedText: list[dict[str, str]] = []
