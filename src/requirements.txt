@@ -1,0 +1,6 @@
+flask
+argostranslate
+python_dotenv
+flask-cors
+Flask-Compress
+Flask-Caching
